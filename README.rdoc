@@ -16,12 +16,19 @@ Things you may want to cover:
 * Database initialization
 
 * How to run the test suite
+Will want to talk to prof. if generating integration tests is alright using Minitest 
+rather than RSpec
 
 * Services (job queues, cache servers, search engines, etc.)
 
 * Deployment instructions
 
-* ...
+* 
+
+
+App layout is called pages
+example route for dashboard: url/pages/dashboard 
+root route should be login 
 
 
 Please feel free to use a different markup language if you do not plan to run
