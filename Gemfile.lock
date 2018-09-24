@@ -36,13 +36,8 @@ GEM
       thread_safe (~> 0.3, >= 0.3.4)
       tzinfo (~> 1.1)
     arel (6.0.4)
-    autoprefixer-rails (9.1.4)
-      execjs
     binding_of_caller (0.8.0)
       debug_inspector (>= 0.0.1)
-    bootstrap-sass (3.3.7)
-      autoprefixer-rails (>= 5.2.1)
-      sass (>= 3.3.4)
     builder (3.2.3)
     byebug (10.0.2)
     coderay (1.1.2)
@@ -201,7 +196,6 @@ GEM
       actionpack (>= 4.0)
       activesupport (>= 4.0)
       sprockets (>= 3.0.0)
-    sqlite3 (1.3.13)
     temple (0.8.0)
     themoviedb (1.0.1)
       httparty
@@ -225,28 +219,26 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  bootstrap-sass (~> 3.3.7)
   byebug
   coffee-rails (~> 4.1.0)
   guard-rspec
   haml
   jbuilder (~> 2.0)
   jquery-rails
-  pg (~> 0.21)
+  pg
   rails (= 4.2.10)
   rails_12factor
   rspec-rails
   sass-rails (~> 5.0)
   sdoc (~> 0.4.0)
   spring
-  sqlite3
   themoviedb
   turbolinks
   uglifier (>= 1.3.0)
   web-console (~> 2.0)
 
 RUBY VERSION
-   ruby 2.4.4p296
+   ruby 2.5.1p57
 
 BUNDLED WITH
    1.16.5
