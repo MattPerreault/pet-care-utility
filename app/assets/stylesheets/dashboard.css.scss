@@ -1,0 +1,46 @@
+
+// this is the font import via google fonts 
+@import url('https://fonts.googleapis.com/css?family=Noto+Serif+KR|Ropa+Sans');
+
+body{
+    font-family: 'Noto Serif KR', sans-serif;
+
+}
+
+.container img {
+    border-radius: 2px;
+    max-width: 85%;
+    max-height: 100%;
+}
+
+#hero {
+    height: 50vh;
+    background-image: image-url("dashboard.jpeg");
+    background-position: center;
+    background-size: cover; 
+}
+
+#dashboard-header {
+    text-align: center;
+    font-family: 'Noto Serif KR', sans-serif;
+}
+
+.col-md-4{  
+    padding: .5em;
+    overflow: hidden;  
+    object-fit: contain;  
+}
+
+.btn-info{
+   font-family: 'Ropa Sans', sans-serif;
+   margin: .5rem;
+   background-color: #ccaf00 !important;
+   border-radius: 1px !important;
+   border: 0;
+}
+
+.pet-btn {
+    margin: .5rem;
+}
+
+

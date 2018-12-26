@@ -1,0 +1,69 @@
+// Place all the styles related to the newUser controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+@import url('https://fonts.googleapis.com/css?family=Noto+Serif+KR:200,300,400');
+@import url('https://fonts.googleapis.com/css?family=Josefin+Sans:300,400');
+
+#background-dog {
+    background-image: url("peekdog.jpeg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100vh;
+}
+
+#background-dog .form-control{
+    border-radius: 5rem;
+}
+
+.card{ 
+    background-color: rgba(0, 0, 0, 0.5) !important;
+}
+.card-signin {
+    border: 0;
+    border-radius: 1rem;
+    box-shadow: 0 0.5rem 1rem 0 rgba(0, 0, 0, 0.1);
+  }
+  
+  .card-signin .card-title {
+    margin-bottom: 2rem;
+    font-weight: 300;
+    font-size: 1.5rem;
+    font-family: 'Noto Serif KR', sans-serif;
+    color: #FFFFFF;
+  }
+  
+  .card-signin {
+  border: 0;
+  border-radius: 1rem;
+  box-shadow: 0 0.5rem 1rem 0 rgba(0, 0, 0, 0.1);
+}
+
+.card-signin .card-title {
+  margin-bottom: 2rem;
+  font-weight: 300;
+  font-size: 1.5rem;
+}
+
+.card-signin .card-body {
+    padding: 2rem;
+    font-family: 'Noto Serif KR', sans-serif;
+    color: #FFFFFF;
+}
+
+.form-signin {
+    width: 100%;
+    font-family: 'Noto Serif KR', sans-serif;
+}
+
+.form-signin .btn {
+    font-size: 80%;
+    border-radius: 5rem;
+    letter-spacing: .1rem;
+    font-weight: bold;
+    background: #CCAF00;
+    border: #CCAF00;
+    padding: 1rem;
+    transition: all 0.2s;
+}

@@ -1,0 +1,72 @@
+app/controllers/application_controller.rb -- 1 warning:
+  [1]:IrresponsibleModule: ApplicationController has no descriptive comment [https://github.com/troessner/reek/blob/v5.2.0/docs/Irresponsible-Module.md]
+app/controllers/home_controller.rb -- 1 warning:
+  [1]:IrresponsibleModule: HomeController has no descriptive comment [https://github.com/troessner/reek/blob/v5.2.0/docs/Irresponsible-Module.md]
+app/controllers/locations_controller.rb -- 1 warning:
+  [1]:IrresponsibleModule: LocationsController has no descriptive comment [https://github.com/troessner/reek/blob/v5.2.0/docs/Irresponsible-Module.md]
+app/controllers/pets_controller.rb -- 3 warnings:
+  [1]:InstanceVariableAssumption: PetsController assumes too much for instance variable '@pet' [https://github.com/troessner/reek/blob/v5.2.0/docs/Instance-Variable-Assumption.md]
+  [1]:IrresponsibleModule: PetsController has no descriptive comment [https://github.com/troessner/reek/blob/v5.2.0/docs/Irresponsible-Module.md]
+  [15]:TooManyStatements: PetsController#create has approx 6 statements [https://github.com/troessner/reek/blob/v5.2.0/docs/Too-Many-Statements.md]
+app/controllers/sessions_controller.rb -- 5 warnings:
+  [8, 9]:DuplicateMethodCall: SessionsController#create calls 'params[:session]' 2 times [https://github.com/troessner/reek/blob/v5.2.0/docs/Duplicate-Method-Call.md]
+  [10, 14]:DuplicateMethodCall: SessionsController#create calls 'user.id' 2 times [https://github.com/troessner/reek/blob/v5.2.0/docs/Duplicate-Method-Call.md]
+  [1]:IrresponsibleModule: SessionsController has no descriptive comment [https://github.com/troessner/reek/blob/v5.2.0/docs/Irresponsible-Module.md]
+  [22]:NilCheck: SessionsController#destroy performs a nil-check [https://github.com/troessner/reek/blob/v5.2.0/docs/Nil-Check.md]
+  [5]:TooManyStatements: SessionsController#create has approx 7 statements [https://github.com/troessner/reek/blob/v5.2.0/docs/Too-Many-Statements.md]
+app/controllers/users_controller.rb -- 2 warnings:
+  [1]:InstanceVariableAssumption: UsersController assumes too much for instance variable '@user' [https://github.com/troessner/reek/blob/v5.2.0/docs/Instance-Variable-Assumption.md]
+  [1]:IrresponsibleModule: UsersController has no descriptive comment [https://github.com/troessner/reek/blob/v5.2.0/docs/Irresponsible-Module.md]
+app/helpers/application_helper.rb -- 2 warnings:
+  [3, 6]:FeatureEnvy: ApplicationHelper#gravatar_for refers to 'user' more than self (maybe move it to another class?) [https://github.com/troessner/reek/blob/v5.2.0/docs/Feature-Envy.md]
+  [1]:IrresponsibleModule: ApplicationHelper has no descriptive comment [https://github.com/troessner/reek/blob/v5.2.0/docs/Irresponsible-Module.md]
+app/helpers/home_helper.rb -- 1 warning:
+  [1]:IrresponsibleModule: HomeHelper has no descriptive comment [https://github.com/troessner/reek/blob/v5.2.0/docs/Irresponsible-Module.md]
+app/helpers/locations_helper.rb -- 1 warning:
+  [1]:IrresponsibleModule: LocationsHelper has no descriptive comment [https://github.com/troessner/reek/blob/v5.2.0/docs/Irresponsible-Module.md]
+app/helpers/sessions_helper.rb -- 3 warnings:
+  [8, 9]:DuplicateMethodCall: SessionsHelper#current_user calls 'session[:user_id]' 2 times [https://github.com/troessner/reek/blob/v5.2.0/docs/Duplicate-Method-Call.md]
+  [1]:IrresponsibleModule: SessionsHelper has no descriptive comment [https://github.com/troessner/reek/blob/v5.2.0/docs/Irresponsible-Module.md]
+  [15]:NilCheck: SessionsHelper#logged_in? performs a nil-check [https://github.com/troessner/reek/blob/v5.2.0/docs/Nil-Check.md]
+app/helpers/user_helper.rb -- 1 warning:
+  [1]:IrresponsibleModule: UserHelper has no descriptive comment [https://github.com/troessner/reek/blob/v5.2.0/docs/Irresponsible-Module.md]
+app/models/pet.rb -- 1 warning:
+  [1]:IrresponsibleModule: Pet has no descriptive comment [https://github.com/troessner/reek/blob/v5.2.0/docs/Irresponsible-Module.md]
+app/models/user.rb -- 1 warning:
+  [1]:IrresponsibleModule: User has no descriptive comment [https://github.com/troessner/reek/blob/v5.2.0/docs/Irresponsible-Module.md]
+app/uploaders/image_uploader.rb -- 1 warning:
+  [1]:IrresponsibleModule: ImageUploader has no descriptive comment [https://github.com/troessner/reek/blob/v5.2.0/docs/Irresponsible-Module.md]
+config/application.rb -- 1 warning:
+  [11]:IrresponsibleModule: PetCareUtility::Application has no descriptive comment [https://github.com/troessner/reek/blob/v5.2.0/docs/Irresponsible-Module.md]
+db/migrate/20181007231232_create_pets.rb -- 3 warnings:
+  [4, 5, 6]:FeatureEnvy: CreatePets#change refers to 't' more than self (maybe move it to another class?) [https://github.com/troessner/reek/blob/v5.2.0/docs/Feature-Envy.md]
+  [1]:IrresponsibleModule: CreatePets has no descriptive comment [https://github.com/troessner/reek/blob/v5.2.0/docs/Irresponsible-Module.md]
+  [3]:UncommunicativeVariableName: CreatePets#change has the variable name 't' [https://github.com/troessner/reek/blob/v5.2.0/docs/Uncommunicative-Variable-Name.md]
+db/migrate/20181007233835_create_users.rb -- 3 warnings:
+  [4, 5, 6]:FeatureEnvy: CreateUsers#change refers to 't' more than self (maybe move it to another class?) [https://github.com/troessner/reek/blob/v5.2.0/docs/Feature-Envy.md]
+  [1]:IrresponsibleModule: CreateUsers has no descriptive comment [https://github.com/troessner/reek/blob/v5.2.0/docs/Irresponsible-Module.md]
+  [3]:UncommunicativeVariableName: CreateUsers#change has the variable name 't' [https://github.com/troessner/reek/blob/v5.2.0/docs/Uncommunicative-Variable-Name.md]
+db/migrate/20181007234716_add_user_id_to_pets.rb -- 1 warning:
+  [1]:IrresponsibleModule: AddUserIdToPets has no descriptive comment [https://github.com/troessner/reek/blob/v5.2.0/docs/Irresponsible-Module.md]
+db/migrate/20181008000544_add_password_digest_to_users.rb -- 1 warning:
+  [1]:IrresponsibleModule: AddPasswordDigestToUsers has no descriptive comment [https://github.com/troessner/reek/blob/v5.2.0/docs/Irresponsible-Module.md]
+db/migrate/20181108193438_add_image_to_pets.rb -- 1 warning:
+  [1]:IrresponsibleModule: AddImageToPets has no descriptive comment [https://github.com/troessner/reek/blob/v5.2.0/docs/Irresponsible-Module.md]
+db/migrate/20181108193632_add_age_to_pets.rb -- 1 warning:
+  [1]:IrresponsibleModule: AddAgeToPets has no descriptive comment [https://github.com/troessner/reek/blob/v5.2.0/docs/Irresponsible-Module.md]
+db/migrate/20181108193746_add_description_to_pets.rb -- 1 warning:
+  [1]:IrresponsibleModule: AddDescriptionToPets has no descriptive comment [https://github.com/troessner/reek/blob/v5.2.0/docs/Irresponsible-Module.md]
+test/controllers/locations_controller_test.rb -- 1 warning:
+  [3]:IrresponsibleModule: LocationsContollerTest has no descriptive comment [https://github.com/troessner/reek/blob/v5.2.0/docs/Irresponsible-Module.md]
+test/integration/user_login_test.rb -- 1 warning:
+  [3]:IrresponsibleModule: UserLoginTest has no descriptive comment [https://github.com/troessner/reek/blob/v5.2.0/docs/Irresponsible-Module.md]
+test/integration/user_signup_test.rb -- 1 warning:
+  [3]:IrresponsibleModule: UserSignupTest has no descriptive comment [https://github.com/troessner/reek/blob/v5.2.0/docs/Irresponsible-Module.md]
+test/integration/users_edit_test.rb -- 1 warning:
+  [3]:IrresponsibleModule: UsersEditTest has no descriptive comment [https://github.com/troessner/reek/blob/v5.2.0/docs/Irresponsible-Module.md]
+test/models/pets_test.rb -- 1 warning:
+  [3]:IrresponsibleModule: PetTest has no descriptive comment [https://github.com/troessner/reek/blob/v5.2.0/docs/Irresponsible-Module.md]
+test/models/user_test.rb -- 1 warning:
+  [3]:IrresponsibleModule: UserTest has no descriptive comment [https://github.com/troessner/reek/blob/v5.2.0/docs/Irresponsible-Module.md]
+test/test_helper.rb -- 1 warning:
+  [7]:IrresponsibleModule: ActiveSupport::TestCase has no descriptive comment [https://github.com/troessner/reek/blob/v5.2.0/docs/Irresponsible-Module.md]

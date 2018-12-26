@@ -1,0 +1,26 @@
+Feature: Create a homepage
+As a pet utility app user
+I want to create a new homepage
+So I can create and save new pet profiles to my account
+
+Scenario: The user doesn't have one or more pet profiles
+When I am on the dashboard
+Then I should see a button "My Pets"
+When I click on My Pets 
+Then I should be redirected to Create Pet Profile Page
+When I create my pets profile
+Then I should be redirected to the homepage
+And I should see my pet profile icon
+
+Scenario: The user has one or more pet profiles
+Given I am on the dashboard
+Then I should see a button "My Pets"
+When I click on "My Pets"
+Then I should be redirected to the homepage
+
+Scenario: The user is on the homepage
+When I am on homepage
+Then I should see buttons for each of my pet profiles
+When I click on a pet profiles
+Then I should be redirected to the pet profile
+

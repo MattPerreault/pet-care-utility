@@ -1,0 +1,25 @@
+<%provide(:title, "Home")%>
+<div id="home-hero">
+    <div class="container h-100">
+        <div class="row h-100 justify-content-center align-items-center">
+            <div class="col-lg-2">
+            </div>
+            <div class="col-lg-10 mx-auto">
+                <div class="col-lg-10 float-right" id="welcome" style="padding-right: 1em;">
+                        <div class="col-md-12 float-right" style="padding-right: 1em;">
+                            <h1>We're Here </h1>
+                            <br>
+                        </div>
+                        <div class="col-md-12" style="padding-right: .75em;">
+                            <h1>to Help You </h1>
+                        </div>
+                        <div class="col-lg-8 float-right col-md-offset-0" style="padding-right: .5em">
+                            <%= link_to "New? Get Started Here", signup_path, class: "btn btn-lg button", id: "new-user-button" %>
+                            <br>
+                            <%= link_to "Login", login_path, style: "margin-top: .5em", class: 'btn btn-lg button', id: "login-button" %>
+                        </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

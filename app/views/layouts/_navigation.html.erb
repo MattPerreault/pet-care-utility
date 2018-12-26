@@ -1,0 +1,42 @@
+
+<div class="container">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <i class="fa fa-paw fa-lg" aria-hidden="true"><%=link_to "", users_url, class: "navbar-brand", id: "paw" %></i>
+    
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+        <li class="nav-item active">
+            <a class="nav-link" href="/users/<%="#{obj.user_id}"%>">Home <span class="sr-only">(current)</span></a>
+            <%# <%= link_to "Home", users_url, class:"nav-link" %>
+            
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="#">Pets</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="#">Stores</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="#">Vets</a>
+        </li>
+        <%# <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Dropdown
+            </a> %>
+            <%# <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <a class="dropdown-item" href="#">Action</a>
+            <a class="dropdown-item" href="#">Another action</a>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item" href="#">Something else here</a>
+            </div> %>
+        </li>
+        </ul>
+
+        <%= link_to "Sign Out", logout_path, method: :delete, class: "nav-item nav-link", id: "sign-out" %>
+    </div>
+    </nav>
+</div>

@@ -1,0 +1,10 @@
+<div class="row text-align-center">
+   <div class="col-md-10 offset-md-1">
+        <% flash.each do |name, msg| %>
+            <div class="alert alert-<%=name%>" role="alert" >
+                <a href="#" class="close fade show", data-dismiss="alert">&#215;</a>
+                <%= msg %>
+            </div>
+        <% end %>
+    </div >
+</div> 

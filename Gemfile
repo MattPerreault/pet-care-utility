@@ -26,7 +26,12 @@ gem 'jbuilder', '~> 2.0'
 gem 'sdoc', '~> 0.4.0', group: :doc
 
 # Use ActiveModel has_secure_password
-# gem 'bcrypt', '~> 3.1.7'
+gem 'bcrypt', '~> 3.1.7'
+
+gem 'geocoder'
+gem 'carrierwave', '~> 1.0'
+gem 'mini_magick', '~> 4.3'
+
 
 # Use Unicorn as the app server
 # gem 'unicorn'
@@ -34,23 +39,40 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
-gem 'themoviedb'
-
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
-  gem 'byebug'
+  gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
+  gem 'factory_girl_rails'
 
-  gem 'rspec-rails'
-  gem 'guard-rspec'
-  
   # Use sqlite3 as the database for Active Record
-#  gem 'sqlite3'
+  gem 'sqlite3'
+  gem 'rails-controller-testing'
 
+  # # Access an IRB console on exception pages or by using <%= console %> in views
+  # gem 'web-console', '~> 2.0'
+
+end
+
+group :development do
   # Access an IRB console on exception pages or by using <%= console %> in views
   gem 'web-console', '~> 2.0'
+  gem 'listen', '>= 3.0.5', '< 3.2'
 
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
+  gem 'spring-watcher-listen', '~>2.0.0'
+end
+
+group :test do
+  gem 'cucumber-rails', require: false
+  gem 'database_cleaner'
+  # Adds suport for Capybara system testing and selenium driver
+  gem 'capybara', '>= 2.15'
+  gem 'selenium-webdriver'
+  # Easy installation and use of chromedriver to run system tests with chrome
+  gem 'chromedriver-helper'
+  gem 'simplecov', require: false
+  gem 'reek', require: false
 end
 
 group :production do

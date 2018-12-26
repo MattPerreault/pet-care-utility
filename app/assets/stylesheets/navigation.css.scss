@@ -1,0 +1,21 @@
+@import url('https://fonts.googleapis.com/css?family=Noto+Serif+KR:200,300,400');
+
+.navbar {
+    font-family: 'Noto Serif KR', sans-serif;
+}
+.fa-paw {
+    color: #26733d;
+}
+
+#sign-out, #navbarDropdown, #home-button {
+    color: #717172;
+}
+
+#sign-out:hover, #navbarDropdown:hover, #home-button:hover{
+
+    color: #0064D3;
+}
+
+.dropdown:hover {
+  cursor: pointer;
+}

@@ -1,0 +1,20 @@
+<%provide(:title, "Log In")%>
+<body>
+    <div id="background-image">
+       <div class="login-box">
+       <h1>Sign In</h1>
+            <%= form_for(:session, url: login_path) do |f| %>
+        
+              <%= f.label :email %>
+              <%= f.email_field :email %>
+        
+              <%= f.label :password %>
+              <%= f.password_field :password %>
+        
+              <%= f.submit "Log in", class: "btn btn-primary", method: :new %>
+              <%= f.check_box :remember_me %>
+              <%= f.label :remember_me, "Remember me", {class: "checkbox inline"} %>
+            <% end %>
+        </div>
+    </div>
+</body>

@@ -1,0 +1,86 @@
+<div class="container">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <i class="fa fa-paw fa-lg" aria-hidden="true"><a class="navar-brand" id="paw"></a></i>
+
+    
+    
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+        <li class="nav-item active">
+            <a class="nav-link" href="/users/<%="#{@pet.user_id}"%>">Home <span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="#">Pets</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="/pet-stores">Stores</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="/vets">Vets</a>
+        </li>
+        </ul>
+        <div class="nav-item nav-link dropdown">
+            <a class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Account Settings
+            </a> 
+            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <a class="dropdown-item" href="/users/<%="#{@pet.user_id}/edit"%>">Update Account Info</a>
+                <div class="dropdown-divider"></div>
+            </div>
+        </div>
+
+        <%= link_to "Sign Out", logout_path, method: :delete, class: "nav-item nav-link", id: "sign-out" %>
+        <i class="fa fa-paw fa-lg" aria-hidden="true"><%=link_to "", users_url, class: "navbar-brand", id: "paw" %></i>
+    </div>
+    </nav>
+</div>
+
+
+<div>
+    <h1 id="dashboard-header">Your Pets</h1> 
+    <hr/>
+</div>
+
+<div class="container">
+    <div class="card" id="create-pet-profile">
+      <div class="card-body">     
+          <%= form_for(:pet, url: pets_url,html:{method: :post}) do |f| %>
+        
+            <div id="addpetbtn">
+            <%= f.submit  "Add Pet", class: "btn btn-primary btn-block text-uppercase"  %>
+            </div>  
+
+        
+            <a href="#" id="addphotobtn"><i class="fa fa-camera-retro fa-5x"></i></a>
+
+            <div class="form-label-group">
+                <%= f.label :name %>
+                <%= f.text_field :name, class: "form-control"%>
+            </div>
+
+            <div class="form-label-group">
+                <%= f.label :species %>
+                <%= f.text_field :animal, class: "form-control"%>
+            </div>
+
+            <% end %>
+        </div>
+    </div>
+
+
+<% @pets.user_id.each do |pet|%>
+    <div class="row">
+      <div class="col-md-2">
+        <div class="card" id="create-pet-profile">
+            <div class="card-body">
+              <h4 class="card-title"><a>Card title</a></h4>
+            </div>
+        </div>
+      </div>
+    </div>
+<% end %>
+</div>

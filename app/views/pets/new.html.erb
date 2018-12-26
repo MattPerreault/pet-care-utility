@@ -1,0 +1,122 @@
+<body>
+<div class="container">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <i class="fa fa-paw fa-lg" aria-hidden="true"><a class="navar-brand" id="paw"></a></i>
+
+    
+    
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+        <li class="nav-item active">
+            <a class="nav-link" href="/users/<%="#{@pet.user_id}"%>">Home <span class="sr-only">(current)</span></a>
+           
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="/pets">Pets</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="/pet-stores">Stores</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="/vets">Vets</a>
+        </li>
+        </ul>
+         <div class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Account Settings
+            </a> 
+            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <a class="dropdown-item" href="/users/<%="#{@pet.user_id}/edit"%>">Update Account Info</a>
+                <div class="dropdown-divider"></div>
+            </div>
+        </div>
+
+        <%= link_to "Sign Out", logout_path, method: :delete, class: "nav-item nav-link", id: "sign-out" %>
+        <i class="fa fa-paw fa-lg" aria-hidden="true"><%=link_to "", users_url, class: "navbar-brand", id: "paw" %></i>
+    </div>
+    </nav>
+</div>
+
+<div>
+    <h1 id="dashboard-header">Your Pets</h1> 
+    <hr/>
+</div>
+
+<div class="pets-container">
+    <div class="pets-card" id="create-pet-profile">  
+          <%= form_for(:pet, url: pets_url,html:{method: :post, class: "form-pet"}) do |f| %> 
+                <div class="image-upload">
+                    <label for="file-input">
+                        <span class="fas fa-camera-retro fa-8x"></span>
+                    </label>
+                    <%= f.file_field :image, id:"file-input"%>
+                </div>
+
+                <div class="pet-label-group">
+                    <%= f.text_field :name, placeholder: "Name", class: "form-control"%>
+                </div>
+                <div class="pet-label-group">
+                    <%= f.select(:animal, ['Dog', 'Cat', 'Reptile', 'Bird', 'Fish', 'Other'], {:prompt => "Species"}, { :class => 'custom-select' }) %>
+                </div> 
+                <div class="pet-label-group">
+                    <%= f.select(:age, (0..50), {:prompt => "Age"}, { :class => 'custom-select' }) %>
+                </div> 
+                
+                <div class="pet-label-group">
+                    <%= f.text_field :description, placeholder: "Pet Description",  class: "form-control"%>
+                </div>
+
+                <div class="add-pet-btn">
+                    <%= f.submit  "Add Pet", class: "pet-btn"  %>
+                </div> 
+            <% end %>
+    </div>
+    <% @pets.each do |pet|%>
+    <% if pet.user == current_user%>
+            <div class="flip-card-container manual-flip">
+                <div class="flip-card">
+                    <div class="front">
+                        <% if pet.image? %>
+                            <div class='pet-image'>
+                                <%= image_tag pet.image %>
+                            </div>
+                        <% else %>
+                            <div class='pet-image'>
+                                <%= image_tag image_url("#{pet.animal.downcase}.jpeg")%>
+                            </div>
+                        <% end %>
+                        <div class="pet-title"><a><%= pet.name -%></a></div>
+                        <div class="pet-info"><a>Species: <%= pet.animal -%></a></div>
+                        <div class="pet-info"><a>Age: <%= pet.age -%></a></div>
+                        <div class="front-btn">
+                        <button class="description-btn" onclick="rotateCard(this)" >Description</button>
+                        </div>
+                    </div>
+
+                    <div class="back">
+                            <div class="pet-title"><a><%= pet.name -%></a></div>
+                            <div class="pet-info"><a>Species: <%= pet.animal -%></a></div>
+                            <div class="pet-info"><a>Age: <%= pet.age -%></a></div>
+                            <div class="description-area">
+                            <div class="description-box">
+                            <div class="description-text">
+                                <%= pet.description -%>
+                            </div>
+                            </div>
+                            </div>
+                            <div class="back-f">
+                            <button class="back-btn" onclick="rotateCard(this)">Back</div></button>
+                            
+                    </div> 
+                </div> 
+            </div>
+            <% end %>
+    <% end %>
+</div>
+
+<script src="flip.js"></script>
+</body>

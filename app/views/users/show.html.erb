@@ -1,0 +1,75 @@
+
+<div class="container">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <i class="fa fa-paw fa-lg" aria-hidden="true"><%=link_to "", users_url, class: "navbar-brand", id: "paw" %></i>
+    
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+        <li class="nav-item active">
+            <a class="nav-link" id="home-button" href="/users/<%="#{@user.id}"%>">Home <span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="/pets">Pets</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="/pet-stores"%>Stores <span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="/vets">Vets <span class="sr-only">(current)</span></a>
+        </li>
+        </ul>
+        <div class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Account Settings
+            </a> 
+            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <a class="dropdown-item" href="/users/<%="#{@user.id}/edit"%>">Update Account Info</a>
+                <div class="dropdown-divider"></div>
+            </div>
+        </div>
+
+        <%= link_to "Sign Out", logout_path, method: :delete, class: "nav-item nav-link", id: "sign-out" %>
+        <i class="fa fa-paw fa-lg" aria-hidden="true"><%=link_to "", users_url, class: "navbar-brand", id: "paw" %></i>
+    </div>
+    </nav>
+</div>
+
+
+
+<div class="container">
+  <div class="jumbotron" id="hero">
+  </div>
+</div>
+
+
+<div>
+    <h1 id="dashboard-header"><%= "#{@user.username}'s " %>Dashboard</h1> 
+    
+</div>
+
+<div class='container'>
+    <hr/>
+  <div class='row' align=center>
+
+      <div class='col-md-4'>
+        <img class="dashboard-photo" src="https://images.pexels.com/photos/63853/guinea-pig-sea-pig-house-cute-guinea-pig-house-63853.jpeg?auto=compress&cs=tinysrgb&h=350">
+        <a href="/pets"><button class='btn-lg btn-info'>Your Pets</button></a>
+        <%# <%= button_to "Your Pets", pets_path, :class => 'btn-lg btn-info', :method => :get %>
+      </div>
+
+      <div class='col-md-4'>
+        <img class="dashboard-photo" src="https://images.pexels.com/photos/811101/pexels-photo-811101.jpeg?auto=compress&cs=tinysrgb&h=350">
+        <a href="/pet-stores"><button class='btn-lg btn-info'>Stores Near You</button></a>
+      </div>
+
+      <div class='col-md-4'>
+        <img class="dashboard-photo" src="https://images.pexels.com/photos/374898/pexels-photo-374898.jpeg?auto=compress&cs=tinysrgb&h=350">
+        <a href="/vets"><button class='btn-lg btn-info'>Vets Near You</button></a>
+      </div>
+      
+  </div>
+</div>
